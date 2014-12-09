@@ -6,9 +6,8 @@ set nocompatible
 " Leader
 let mapleader = " "
 
-" Set swapfiles to be stored in a temporary directory
-set swapfile
-set dir=~/tmp
+" Disable swapfiles
+set noswapfile
 
 " Hybrid line numbers
 set number
