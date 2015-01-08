@@ -64,6 +64,12 @@ nnoremap <C-l> <C-w>l
 " Hotkey for NERDTree toggle
 map <C-n> :NERDTreeToggle<CR>
 
+" Copy selection to clipboard
+vmap <C-c> :w !pbcopy<CR><CR>
+
+" Spell checking in markdown files
+autocmd BufRead,BufNewFile *.md setlocal spell
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
