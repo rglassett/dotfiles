@@ -7,3 +7,5 @@ alias "gcm"="git checkout master"
 alias "gpr"="git pull --rebase"
 alias "rg"="cd ~/rglassett"
 alias "v"="vim"
+
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
