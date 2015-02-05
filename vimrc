@@ -61,6 +61,14 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Quicker tab manipulation
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabnew<CR>
+nnoremap tw  :tabclose<CR>
+
 " Hotkey for NERDTree toggle
 map <C-n> :NERDTreeToggle<CR>
 
