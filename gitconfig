@@ -6,4 +6,6 @@
   name = Ryan Glassett
   email = rglassett@gmail.com
 [push]
-	default = simple
+  default = simple
+[core]
+  editor = vim
