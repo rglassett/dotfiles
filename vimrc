@@ -3,7 +3,7 @@
 
 set nocompatible
 
-" Leader
+" Use space as leader
 let mapleader = " "
 
 " Disable swapfiles

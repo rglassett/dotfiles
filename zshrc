@@ -15,6 +15,9 @@ setopt autocd
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+# Fix CTRL keybindings
+bindkey -e
+
 # History search
 bindkey '^R' history-incremental-search-backward
 
