@@ -7,6 +7,9 @@ alias "gcb"="git checkout -b"
 alias "gcm"="git checkout master"
 alias "gpr"="git pull --rebase"
 alias "rg"="cd ~/rglassett"
+alias "snippets"="cd ~/.vim/bundle/vim-snippets"
 alias "v"="vim"
+
+alias "zip_all"="for f in *; do zip -r $f.zip $f; done"
 
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
