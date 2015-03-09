@@ -1,5 +1,10 @@
 [alias]
+  d = difftool
   l = log --pretty=colored
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false
 [pretty]
   colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
 [user]

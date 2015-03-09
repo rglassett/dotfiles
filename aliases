@@ -10,6 +10,7 @@ alias "rg"="cd ~/rglassett"
 alias "snippets"="cd ~/.vim/bundle/vim-snippets"
 alias "v"="vim"
 
+alias "unzip_all"="for f in *.zip; do unzip $f; done"
 alias "zip_all"="for f in *; do zip -r $f.zip $f; done"
 
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
