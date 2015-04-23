@@ -1,3 +1,9 @@
 .DS_Store
-*.swp
 *.local
+*.sw[nop]
+.bundle
+.env
+db/*.sqlite3
+log/*.log
+tmp/**/*
+!tmp/cache/.keep
