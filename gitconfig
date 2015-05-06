@@ -1,4 +1,6 @@
 [alias]
+  aa = add -A
+  co = checkout
   d = difftool
   l = log --pretty=colored
 [diff]
@@ -14,3 +16,4 @@
   default = simple
 [core]
   editor = vim
+  excludesfile = ~/.gitignore
