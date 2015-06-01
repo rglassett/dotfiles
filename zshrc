@@ -42,6 +42,13 @@ export CLICOLOR=1
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# required by pyenv
+eval "$(pyenv init -)"
+
+# frequently-used scripts
+zip_all () { for f in *; do zip -r $f.zip $f; done }
+unzip_all () { for f in *.zip; do unzip $f; done }
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 

@@ -1,8 +1,10 @@
 [alias]
   aa = add -A
+  cm = checkout master
   co = checkout
   d = difftool
   l = log --pretty=colored
+  pr = pull --rebase
 [diff]
   tool = vimdiff
 [difftool]

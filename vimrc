@@ -75,8 +75,9 @@ map <C-n> :NERDTreeToggle<CR>
 " Copy selection to clipboard
 vmap <C-c> :w !pbcopy<CR><CR>
 
-" Spell checking in markdown files
-autocmd BufRead,BufNewFile *.md setlocal spell
+" Spell checking and wrapping at 72 columns in markdown files/git commits
+autocmd BufRead,BufNewFile *.md setlocal spell textwidth=72
+autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
