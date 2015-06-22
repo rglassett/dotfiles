@@ -45,10 +45,6 @@ eval "$(rbenv init -)"
 # required by pyenv
 eval "$(pyenv init -)"
 
-# frequently-used scripts
-zip_all () { for f in *; do zip -r $f.zip $f; done }
-unzip_all () { for f in *.zip; do unzip $f; done }
-
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function

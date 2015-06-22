@@ -1,0 +1,1 @@
+unzip_all () { for f in *.zip; do unzip $f; done }
