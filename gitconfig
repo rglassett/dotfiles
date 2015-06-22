@@ -1,5 +1,7 @@
 [alias]
   aa = add -A
+  b = branch
+  cb = checkout -b
   cm = checkout master
   co = checkout
   d = difftool
