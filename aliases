@@ -1,3 +1,4 @@
+alias "a"="atom"
 alias "b"="bundle"
 alias "be"="bundle exec"
 alias "dotfiles"="cd ~/dotfiles"
