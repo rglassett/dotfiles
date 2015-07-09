@@ -6,11 +6,15 @@
   co = checkout
   d = difftool
   l = log --pretty=colored
+  m = merge --ff-only
+  mt = mergetool
   pr = pull --rebase
 [diff]
   tool = vimdiff
 [difftool]
   prompt = false
+[merge]
+  tool = vimdiff
 [pretty]
   colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
 [user]

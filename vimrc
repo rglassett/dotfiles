@@ -63,8 +63,8 @@ nnoremap <C-l> <C-w>l
 
 " Quicker tab manipulation
 nnoremap th  :tabfirst<CR>
-nnoremap tj  :tabprev<CR>
-nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
 nnoremap tl  :tablast<CR>
 nnoremap tt  :tabnew<CR>
 nnoremap tw  :tabclose<CR>
