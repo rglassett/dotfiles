@@ -10,6 +10,7 @@
   m = merge --ff-only
   mt = mergetool
   pr = pull --rebase
+  r = rebase
 [core]
   editor = vim
   excludesfile = ~/.gitignore
@@ -18,11 +19,9 @@
 [difftool]
   prompt = false
 [merge]
-  tool = fugitive
+  tool = vimdiff
 [mergetool]
   keepBackup = false
-[mergetool "fugitive"]
-  cmd = vim -f -c \"Gvdiff\" \"$MERGED\"
 [pretty]
   colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
 [push]
