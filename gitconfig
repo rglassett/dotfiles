@@ -10,23 +10,23 @@
   m = merge --ff-only
   mt = mergetool
   pr = pull --rebase
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
 [diff]
   tool = vimdiff
 [difftool]
   prompt = false
 [merge]
   tool = fugitive
-[pretty]
-  colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
-[user]
-  name = Ryan Glassett
-  email = rglassett@gmail.com
-[push]
-  default = simple
-[core]
-  editor = vim
-  excludesfile = ~/.gitignore
 [mergetool]
   keepBackup = false
 [mergetool "fugitive"]
   cmd = vim -f -c \"Gvdiff\" \"$MERGED\"
+[pretty]
+  colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
+[push]
+  default = simple
+[user]
+  name = Ryan Glassett
+  email = rglassett@gmail.com
