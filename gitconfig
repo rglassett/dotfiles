@@ -1,4 +1,5 @@
 [alias]
+  a = add
   aa = add -A
   b = branch
   cb = checkout -b
@@ -14,7 +15,7 @@
 [difftool]
   prompt = false
 [merge]
-  tool = vimdiff
+  tool = fugitive
 [pretty]
   colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
 [user]
@@ -25,3 +26,7 @@
 [core]
   editor = vim
   excludesfile = ~/.gitignore
+[mergetool]
+  keepBackup = false
+[mergetool "fugitive"]
+  cmd = vim -f -c \"Gvdiff\" \"$MERGED\"
