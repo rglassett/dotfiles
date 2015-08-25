@@ -9,8 +9,8 @@ compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt autocd
 bindkey -v
 # End of lines configured by zsh-newuser-install
@@ -39,11 +39,13 @@ colors
 export CLICOLOR=1
 
 # required by rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # required by pyenv
 eval "$(pyenv init -)"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
 
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
@@ -55,6 +57,3 @@ done
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
