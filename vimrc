@@ -19,6 +19,9 @@ set history=50
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
+set hlsearch      " highlight search results
+set ignorecase    " Case insensitive pattern matching
+set smartcase     " Overrides ignorecase if pattern contains caps
 set laststatus=2  " Always display the status line
 set smartindent   " Next-line indentation
 
@@ -56,10 +59,13 @@ set splitbelow
 set splitright
 
 " Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-l> <C-w>l
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
 
 " Quicker tab manipulation
 nnoremap th  :tabfirst<CR>
@@ -74,6 +80,13 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Copy selection to clipboard
 vmap <C-c> :w !pbcopy<CR><CR>
+
+" Smart paste from system clipboard
+map <Leader>p :set paste<CR>"*]p:set nopaste<CR>
+" Indent entire file
+map <Leader>i mmgg=G`m<CR>
+" Disable search highlighting
+map <Leader>h :nohlsearch<CR>
 
 " Spell checking and wrapping at 72 columns in markdown files/git commits
 autocmd BufRead,BufNewFile *.md setlocal spell textwidth=72
