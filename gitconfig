@@ -6,7 +6,7 @@
   cm = checkout master
   co = checkout
   d = difftool
-  l = log --pretty=colored
+  l = log --pretty=colored-oneline --date=short
   m = merge --ff-only
   mt = mergetool
   pr = pull --rebase
@@ -23,7 +23,7 @@
 [mergetool]
   keepBackup = false
 [pretty]
-  colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
+  colored-oneline = format:%Cred%h%Creset %cd %Cblue%an%Creset %s
 [push]
   default = simple
 [user]
