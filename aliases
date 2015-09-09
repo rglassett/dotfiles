@@ -1,10 +1,10 @@
-alias "a"="atom"
-alias "b"="bundle"
-alias "be"="bundle exec"
-alias "dotfiles"="cd ~/dotfiles"
-alias "dropbox"="cd ~/Dropbox"
-alias "r"="bundle exec rspec"
-alias "snippets"="cd ~/.vim/bundle/vim-snippets/snippets"
-alias "v"="vim"
+alias a="atom"
+alias b="bundle"
+alias be="bundle exec"
+alias e="$EDITOR"
+alias path="echo $PATH | tr -s ':' '\n'"
+alias r="bundle exec rspec"
+alias snippets="cd ~/.vim/bundle/vim-snippets/snippets"
+alias v="$VISUAL"
 
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
