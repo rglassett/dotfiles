@@ -1,29 +1,3 @@
-# The following lines were added by compinstall
-
-zstyle ':completion:*' completer _complete _ignored
-zstyle ':completion:*' verbose true
-zstyle :compinstall filename '/Users/ryan/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-setopt autocd
-bindkey -v
-# End of lines configured by zsh-newuser-install
-
-export VISUAL="vim"
-export EDITOR=$VISUAL
-
-# Fix CTRL keybindings
-bindkey -e
-
-# History search
-bindkey '^R' history-incremental-search-backward
-
 # modify the prompt to contain git branch name if applicable
 git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null)
@@ -33,6 +7,27 @@ git_prompt_info() {
 }
 setopt promptsubst
 export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
+
+# completion
+autoload -Uz compinit
+compinit
+
+# history settings
+HISTFILE=~/.histfile
+HISTSIZE=1024
+SAVEHIST=1024
+
+setopt autocd
+
+export VISUAL="vim"
+export EDITOR=$VISUAL
+
+bindkey -v
+
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '^K' kill-line
+bindkey '^R' history-incremental-search-backward
 
 # makes color constants available
 autoload -U colors
