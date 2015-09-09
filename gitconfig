@@ -7,7 +7,7 @@
   co = checkout
   d = difftool
   l = log --pretty=colored-oneline --date=short
-  m = merge --ff-only
+  m = merge
   mt = mergetool
   pr = pull --rebase
   r = rebase
@@ -19,6 +19,7 @@
 [difftool]
   prompt = false
 [merge]
+  ff = only
   tool = vimdiff
 [mergetool]
   keepBackup = false

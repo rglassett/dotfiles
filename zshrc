@@ -15,6 +15,9 @@ setopt autocd
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+export VISUAL="vim"
+export EDITOR=$VISUAL
+
 # Fix CTRL keybindings
 bindkey -e
 
