@@ -42,8 +42,11 @@ eval "$(rbenv init -)"
 # required by pyenv
 eval "$(pyenv init -)"
 
-### Added by the Heroku Toolbelt
+# Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# load autojump
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
