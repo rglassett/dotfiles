@@ -12,6 +12,9 @@ export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$
 autoload -Uz compinit
 compinit
 
+# batch rename
+autoload -U zmv
+
 # history settings
 HISTFILE=~/.histfile
 HISTSIZE=1024
