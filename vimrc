@@ -8,6 +8,7 @@ let mapleader = " "
 
 set backspace=2           " Backspace deletes like most programs in insert mode
 set cursorline            " Highlight currently-selected line
+set diffopt+=vertical     " Use vertical splits in Gdiff
 set hlsearch              " Highlight search results
 set ignorecase            " Case insensitive pattern matching
 set incsearch             " Do incremental searching
@@ -60,21 +61,26 @@ colorscheme solarized
 autocmd VimResized * :wincmd =
 
 " Quicker tab manipulation
-nnoremap th  :tabfirst<CR>
-nnoremap tj  :tabnext<CR>
-nnoremap tk  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap tt  :tabnew<CR>
-nnoremap tw  :tabclose<CR>
+nnoremap th :tabfirst<CR>
+nnoremap tj :tabnext<CR>
+nnoremap tk :tabprev<CR>
+nnoremap tl :tablast<CR>
+nnoremap tt :tabnew<CR>
+nnoremap tw :tabclose<CR>
+
+" faster quickfix list navigation
+nnoremap [Q :cfirst<CR>
+nnoremap [q :cprev<CR>
+nnoremap ]q :cnext<CR>
+nnoremap [Q :clast<CR>
 
 " Hotkey for NERDTree toggle
 noremap <C-n> :NERDTreeToggle<CR>
 " Copy selection to clipboard
 vnoremap <C-c> :w !pbcopy<CR><CR>
-" Open my vimrc in a split for editing
-nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
-" Source my vimrc to bring in the latest changes
-nnoremap <Leader>sv :source $MYVIMRC<CR>
+" On-the-fly updates to vimrc
+nnoremap <Leader>v :tabedit $MYVIMRC<CR>
+autocmd BufWritePost .vimrc source $MYVIMRC
 " Smart paste from system clipboard
 noremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
 " Indent entire file
