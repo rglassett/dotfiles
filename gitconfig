@@ -9,6 +9,7 @@
   l = log --pretty=colored-oneline --date=short
   m = merge
   mt = mergetool
+  p = pull
   pr = pull --rebase
   r = rebase
 [core]
@@ -25,6 +26,8 @@
   keepBackup = false
 [pretty]
   colored-oneline = format:%Cred%h%Creset %cd %Cblue%an%Creset %s
+[pull]
+  ff = only
 [push]
   default = simple
 [user]
