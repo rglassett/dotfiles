@@ -1,9 +1,20 @@
+# OS X
 .DS_Store
-*.local
+
+# Windows
+Thumbs.db
+
+# Vim
 *.sw[nop]
-.bundle
-.env
+
+# Rails
 db/*.sqlite3
 log/*.log
 tmp/**/*
 !tmp/cache/.keep
+.sass-cache
+
+# Other
+*.local
+.bundle
+.env

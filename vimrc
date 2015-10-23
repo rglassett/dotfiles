@@ -77,12 +77,12 @@ nnoremap [Q :clast<CR>
 " Hotkey for NERDTree toggle
 noremap <C-n> :NERDTreeToggle<CR>
 " Copy selection to clipboard
-vnoremap <C-c> :w !pbcopy<CR><CR>
+vnoremap <C-c> "*dP
+" Smart paste from system clipboard
+noremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
 " On-the-fly updates to vimrc
 nnoremap <Leader>v :tabedit $MYVIMRC<CR>
 autocmd BufWritePost .vimrc source $MYVIMRC
-" Smart paste from system clipboard
-noremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
 " Indent entire file
 noremap <Leader>i mmgg=G`m<CR>
 " Disable search highlighting
@@ -91,6 +91,9 @@ noremap <Leader>h :nohlsearch<CR>
 " Spell checking and wrapping at 72 columns in markdown files/git commits
 autocmd BufRead,BufNewFile *.md setlocal spell textwidth=72
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+" Syntax highlighting for markdown code blocks
+let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'ruby', 'rb=ruby', 'html']
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
