@@ -45,4 +45,6 @@ brew cask install slack
 brew tap thoughtbot/formulae
 brew install rcm
 
+brew cleanup
+
 env RCRC=$HOME/dotfiles/rcrc rcup
