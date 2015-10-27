@@ -2,4 +2,3 @@
 --skip-bundle
 --skip-test-unit
 --skip-turbolinks
---template=~/.rails/template.rb
