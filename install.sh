@@ -38,6 +38,7 @@ rbenv global "$RUBY_VERSION"
 brew install caskroom/cask/brew-cask
 
 brew cask install dropbox
+brew cask install flux
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install slack
