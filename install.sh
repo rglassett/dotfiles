@@ -34,6 +34,10 @@ brew unlink openssl && brew link openssl --force
 
 rbenv install "$RUBY_VERSION"
 rbenv global "$RUBY_VERSION"
+rbenv shell "$RUBY_VERSION"
+
+gem install bundler
+rbenv rehash
 
 brew install caskroom/cask/brew-cask
 
