@@ -3,7 +3,7 @@
 # TODO: sudo xcodebuild -license ? Also write functions to do this stuff
 # conditionally
 
-RUBY_VERSION=2.1.2
+RUBY_VERSION=2.2.2
 
 # Install Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -16,6 +16,7 @@ chsh -s $(which zsh)
 # Brew installations
 brew install git
 brew install heroku-toolbelt
+brew install imagemagick
 brew install node
 brew install phantomjs
 brew install postgresql
