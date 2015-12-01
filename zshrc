@@ -40,10 +40,7 @@ colors
 export CLICOLOR=1
 
 # required by rbenv
-eval "$(rbenv init -)"
-
-# required by pyenv
-eval "$(pyenv init -)"
+eval "$(rbenv init - zsh)"
 
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

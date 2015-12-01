@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # TODO: sudo xcodebuild -license ? Also write functions to do this stuff
 # conditionally

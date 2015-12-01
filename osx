@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# ~/.osx — https://mths.be/osx
+# ~/.osx - https://mths.be/osx
 
 # Finder: show hidden files by default
 defaults write com.apple.finder AppleShowAllFiles -bool true
