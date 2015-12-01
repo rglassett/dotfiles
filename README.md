@@ -2,23 +2,23 @@
 
 ### Installation
 
-Set zsh as your login shell:
+Download and run the install script:
 
-    chsh -s $(which zsh)
+```sh
+curl https://raw.githubusercontent.com/rglassett/dotfiles/master/install.sh | sh
+```
 
-Clone onto your laptop:
+Alternatively, clone the repository, review/edit the dotfiles, and
+symlink them:
 
-    git clone git://github.com/rglassett/dotfiles.git
+```sh
+git clone git@github.com:rglassett/dotfiles.git $HOME/dotfiles
 
-Install [rcm](https://github.com/thoughtbot/rcm):
+brew tap thoughtbot/formulae
+brew install rcm
 
-    brew tap thoughtbot/formulae
-    brew install rcm
+env RCRC=$HOME/dotfiles/rcrc rcup
+```
 
-Install the dotfiles:
-
-    env RCRC=$HOME/dotfiles/rcrc rcup
-
-### Inspiration
-
-- [Thoughtbot][https://github.com/thoughtbot/dotfiles]
+Much of this configuration is stolen from the [Thoughtbot dotfiles
+repo][https://github.com/thoughtbot/dotfiles].
