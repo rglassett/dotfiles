@@ -9,14 +9,19 @@ curl https://raw.githubusercontent.com/rglassett/dotfiles/master/install.sh | sh
 ```
 
 Alternatively, clone the repository, review/edit the dotfiles, and
-symlink them:
+install manually.
+
+If you don't already have rcm:
+
+```sh
+brew tap thoughtbot/formulae
+brew install rcm
+```
+
+Then, to install:
 
 ```sh
 git clone git@github.com:rglassett/dotfiles.git $HOME/dotfiles
-
-brew tap thoughtbot/formulae
-brew install rcm
-
 env RCRC=$HOME/dotfiles/rcrc rcup
 ```
 
