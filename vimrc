@@ -41,21 +41,24 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
+" Plugin-dependent configuration
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
+  colorscheme solarized
 endif
 
 filetype plugin indent on
 
 " Color scheme
 set background=dark
-colorscheme solarized
 
-" Quicker window movement (disable if using vim-tmux-navigator)
-" nnoremap <C-j> <C-w>j
-" nnoremap <C-k> <C-w>k
-" nnoremap <C-h> <C-w>h
-" nnoremap <C-l> <C-w>l
+" Quicker window movement outside of vim-tmux-navigator
+if !exists("g:loaded_tmux_navigator")
+  nnoremap <C-j> <C-w>j
+  nnoremap <C-k> <C-w>k
+  nnoremap <C-h> <C-w>h
+  nnoremap <C-l> <C-w>l
+endif
 
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
@@ -77,7 +80,7 @@ nnoremap [Q :clast<CR>
 " Hotkey for NERDTree toggle
 noremap <C-n> :NERDTreeToggle<CR>
 " Copy selection to clipboard
-vnoremap <C-c> "*dP
+vnoremap <C-c> "*du
 " Smart paste from system clipboard
 noremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
 " On-the-fly updates to vimrc
