@@ -5,15 +5,13 @@
 
 RUBY_VERSION=2.2.2
 
-# Install Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
 
-# Set up Z shell
 brew install zsh
 chsh -s $(which zsh)
 
-# Brew installations
+brew install autojump
 brew install git
 brew install heroku-toolbelt
 brew install imagemagick
@@ -32,6 +30,9 @@ brew install vim
 
 brew install openssl
 brew unlink openssl && brew link openssl --force
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim "+:PluginInstall" "+:qa"
 
 rbenv install "$RUBY_VERSION"
 rbenv global "$RUBY_VERSION"
