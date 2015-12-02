@@ -1,7 +1,6 @@
 #!/bin/sh
 
-# TODO: sudo xcodebuild -license ? Also write functions to do this stuff
-# conditionally
+# TODO: Write functions to do this stuff conditionally
 
 RUBY_VERSION=2.2.2
 
@@ -17,7 +16,6 @@ brew install heroku-toolbelt
 brew install imagemagick
 brew install node
 brew install phantomjs
-brew install postgresql
 brew install qt
 brew install rbenv
 brew install readline
@@ -31,8 +29,13 @@ brew install vim
 brew install openssl
 brew unlink openssl && brew link openssl --force
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim "+:PluginInstall" "+:qa"
+brew install postgresql
+ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+
+brew install redis
+ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
 
 rbenv install "$RUBY_VERSION"
 rbenv global "$RUBY_VERSION"
@@ -54,4 +57,10 @@ brew install rcm
 
 brew cleanup
 
-env RCRC=$HOME/dotfiles/rcrc rcup
+if [[ ! -d "$HOME/dotfiles" ]]; then
+  git clone git@github.com:rglassett/dotfiles.git $HOME/dotfiles
+  env RCRC=$HOME/dotfiles/rcrc rcup
+fi
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim "+:PluginInstall" "+:qa"
