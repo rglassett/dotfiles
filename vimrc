@@ -52,14 +52,6 @@ filetype plugin indent on
 " Color scheme
 set background=dark
 
-" Quicker window movement outside of vim-tmux-navigator
-if !exists("g:loaded_tmux_navigator")
-  nnoremap <C-j> <C-w>j
-  nnoremap <C-k> <C-w>k
-  nnoremap <C-h> <C-w>h
-  nnoremap <C-l> <C-w>l
-endif
-
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
