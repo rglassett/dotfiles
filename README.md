@@ -26,4 +26,4 @@ env RCRC=$HOME/dotfiles/rcrc rcup
 ```
 
 Much of this configuration is stolen from the [Thoughtbot dotfiles
-repo][https://github.com/thoughtbot/dotfiles].
+repo](https://github.com/thoughtbot/dotfiles).

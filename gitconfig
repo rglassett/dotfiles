@@ -19,6 +19,8 @@
   tool = vimdiff
 [difftool]
   prompt = false
+[include]
+  path = ~/.gitconfig.local
 [merge]
   ff = only
   tool = vimdiff
