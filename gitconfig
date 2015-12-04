@@ -12,6 +12,7 @@
   p = pull
   pr = pull --rebase
   r = rebase
+  trust = "!mkdir -p .git/safe"
 [core]
   editor = vim
   excludesfile = ~/.gitignore

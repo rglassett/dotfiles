@@ -2,7 +2,7 @@
 git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null)
   if [[ -n $ref ]]; then
-    echo " %{$fg_bold[green]%}${ref#refs/heads/}%{$reset_color%}"
+    echo " %{$fg_bold[magenta]%}${ref#refs/heads/}%{$reset_color%}"
   fi
 }
 setopt promptsubst
@@ -44,6 +44,9 @@ eval "$(rbenv init - zsh)"
 
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# Add trusted binstubs to the path
+export PATH=".git/safe/../../bin:$PATH"
 
 # load autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
