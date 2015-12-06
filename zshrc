@@ -1,3 +1,9 @@
+# makes color constants available
+autoload -U colors && colors
+
+# enable colored output from ls, etc
+export CLICOLOR=1
+
 # modify the prompt to contain git branch name if applicable
 git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null)
@@ -31,13 +37,6 @@ bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey '^K' kill-line
 bindkey '^R' history-incremental-search-backward
-
-# makes color constants available
-autoload -U colors
-colors
-
-# enable colored output from ls, etc
-export CLICOLOR=1
 
 # required by rbenv
 eval "$(rbenv init - zsh)"
