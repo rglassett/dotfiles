@@ -44,16 +44,13 @@ endif
 " Plugin-dependent configuration
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
-  colorscheme solarized
 endif
 
 filetype plugin indent on
 
 " Color scheme
 set background=dark
-
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
+colorscheme solarized
 
 " Quicker tab manipulation
 nnoremap th :tabfirst<CR>
@@ -77,15 +74,28 @@ vnoremap <C-c> "*du
 noremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
 " On-the-fly updates to vimrc
 nnoremap <Leader>v :tabedit $MYVIMRC<CR>
-autocmd BufWritePost .vimrc source $MYVIMRC
 " Indent entire file
 noremap <Leader>i mmgg=G`m<CR>
 " Disable search highlighting
 noremap <Leader>h :nohlsearch<CR>
 
-" Spell checking and wrapping at 72 columns in markdown files/git commits
-autocmd BufRead,BufNewFile *.md setlocal spell textwidth=72
-autocmd Filetype gitcommit setlocal spell textwidth=72
+augroup display_settings
+  autocmd!
+  " automatically rebalance windows on vim resize
+  autocmd VimResized * :wincmd =
+augroup END
+
+augroup update_vimrc
+  autocmd!
+  autocmd BufWritePost .vimrc source $MYVIMRC
+augroup END
+
+augroup filetypes
+  autocmd!
+  " Spell checking and wrapping at 72 columns in markdown files/git commits
+  autocmd BufRead,BufNewFile *.md setlocal spell textwidth=72
+  autocmd Filetype gitcommit setlocal spell textwidth=72
+augroup END
 
 " Syntax highlighting for markdown code blocks
 let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'ruby', 'rb=ruby', 'html']
@@ -103,6 +113,6 @@ if executable('ag')
 endif
 
 " Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
+if filereadable(glob(".vimrc.local"))
+  source .vimrc.local
 endif
