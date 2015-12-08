@@ -11,6 +11,7 @@ brew install zsh
 chsh -s $(which zsh)
 
 brew install autojump
+brew install ctags
 brew install git
 brew install heroku-toolbelt
 brew install imagemagick

@@ -18,3 +18,5 @@ tmp/**/*
 *.local
 .bundle
 .env
+
+tags
