@@ -21,6 +21,7 @@ brew install qt
 brew install rbenv
 brew install readline
 brew install reattach-to-user-namespace
+brew install redis
 brew install ruby-build
 brew install sqlite
 brew install the_silver_searcher
