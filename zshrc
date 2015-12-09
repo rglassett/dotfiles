@@ -44,6 +44,9 @@ eval "$(rbenv init - zsh)"
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# Add dotfiles bin directory to the path
+export PATH="$HOME/.bin:$PATH"
+
 # Add trusted binstubs to the path
 export PATH=".git/safe/../../bin:$PATH"
 
