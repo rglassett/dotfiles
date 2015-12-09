@@ -66,8 +66,7 @@ nnoremap [q :cprev<CR>
 nnoremap ]q :cnext<CR>
 nnoremap [Q :clast<CR>
 
-" Hotkey for NERDTree toggle
-noremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 " Copy selection to clipboard
 vnoremap <C-c> "*du
 " Smart paste from system clipboard
@@ -79,9 +78,22 @@ noremap <Leader>i mmgg=G`m<CR>
 " Disable search highlighting
 noremap <Leader>h :nohlsearch<CR>
 
-augroup display_settings
+set statusline=%.20f
+set statusline+=\ 
+set statusline+=%y
+set statusline+=\ 
+set statusline+=%m
+set statusline+=%=
+set statusline+=%h
+set statusline+=\ 
+set statusline+=%c
+set statusline+=\ 
+set statusline+=[%l/%L]
+set statusline+=\ 
+set statusline+=(%p%%)
+
+augroup window_resize
   autocmd!
-  " automatically rebalance windows on vim resize
   autocmd VimResized * :wincmd =
 augroup END
 
@@ -92,23 +104,17 @@ augroup END
 
 augroup filetypes
   autocmd!
-  " Spell checking and wrapping at 72 columns in markdown files/git commits
-  autocmd BufRead,BufNewFile *.md setlocal spell textwidth=72
-  autocmd Filetype gitcommit setlocal spell textwidth=72
+  autocmd Filetype gitcommit,markdown setlocal spell textwidth=72
 augroup END
 
-" Syntax highlighting for markdown code blocks
 let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'ruby', 'rb=ruby', 'html']
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
-  " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use Ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
-  " Ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
 
