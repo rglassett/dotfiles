@@ -64,6 +64,9 @@ if [[ ! -d "$HOME/dotfiles" ]]; then
   env RCRC=$HOME/dotfiles/rcrc rcup
 fi
 
+open ~/.iTerm2/Solarized\ Dark\ Deutan.itermcolors
+open ~/.iTerm2/Solarized\ Light\ Deutan.itermcolors
+
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim "+:PluginInstall" "+:qa"
 
