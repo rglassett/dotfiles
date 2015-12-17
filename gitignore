@@ -20,3 +20,5 @@ tmp/**/*
 .env
 
 tags
+.agignore
+.byebug_history

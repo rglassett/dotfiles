@@ -78,7 +78,7 @@ noremap <Leader>i mmgg=G`m<CR>
 " Disable search highlighting
 noremap <Leader>h :nohlsearch<CR>
 
-set statusline=%.20f
+set statusline=%.40f
 set statusline+=\ 
 set statusline+=%y
 set statusline+=\ 

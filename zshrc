@@ -37,6 +37,7 @@ bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey '^K' kill-line
 bindkey '^R' history-incremental-search-backward
+bindkey '^U' kill-whole-line
 
 # required by rbenv
 eval "$(rbenv init - zsh)"
