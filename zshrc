@@ -39,17 +39,17 @@ bindkey '^K' kill-line
 bindkey '^R' history-incremental-search-backward
 bindkey '^U' kill-whole-line
 
-# required by rbenv
+
+prepend_to_path() {
+  PATH="$1:$PATH"
+}
+
 eval "$(rbenv init - zsh)"
+prepend_to_path /usr/local/heroku/bin
+prepend_to_path $HOME/.bin
+prepend_to_path .git/safe/../../bin
 
-# Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# Add dotfiles bin directory to the path
-export PATH="$HOME/.bin:$PATH"
-
-# Add trusted binstubs to the path
-export PATH=".git/safe/../../bin:$PATH"
+export -U PATH
 
 # load autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
