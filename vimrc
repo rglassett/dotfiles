@@ -53,10 +53,10 @@ set background=dark
 colorscheme solarized
 
 " Quicker tab manipulation
-nnoremap th :tabfirst<CR>
-nnoremap tj :tabnext<CR>
-nnoremap tk :tabprev<CR>
-nnoremap tl :tablast<CR>
+nnoremap th :tabprev<CR>
+nnoremap tj :tablast<CR>
+nnoremap tk :tabfirst<CR>
+nnoremap tl :tabnext<CR>
 nnoremap tt :tabnew<CR>
 nnoremap tw :tabclose<CR>
 
