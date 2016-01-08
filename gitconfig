@@ -3,7 +3,7 @@
   aa = add -A
   b = branch
   cb = checkout -b
-  cm = checkout master
+  cm = commit
   co = checkout
   d = difftool
   l = log --pretty=colored-oneline --date=short
