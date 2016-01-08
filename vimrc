@@ -12,6 +12,7 @@ set diffopt+=vertical     " Use vertical splits in Gdiff
 set hlsearch              " Highlight search results
 set ignorecase            " Case insensitive pattern matching
 set incsearch             " Do incremental searching
+set lazyredraw            " Boost performance a little bit
 set laststatus=2          " Always display the status line
 set nojoinspaces          " One space after periods when joining lines
 set noswapfile            " Disable swapfiles
