@@ -1,12 +1,10 @@
-alias a="atom"
 alias b="bundle"
 alias be="bundle exec"
 alias e="$EDITOR"
 alias l="ls"
 alias la="ls -a"
 alias ll="ls -al"
-alias r="bundle exec rspec"
-alias snippets="cd ~/.vim/bundle/vim-snippets/snippets"
+alias r="rspec"
 alias v="$VISUAL"
 
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
