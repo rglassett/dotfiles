@@ -23,7 +23,7 @@
   path = ~/.gitconfig.local
 [merge]
   ff = only
-  tool = vimdiff
+  tool = fugitive
 [mergetool]
   keepBackup = false
 [pretty]
@@ -35,3 +35,5 @@
 [user]
   name = Ryan Glassett
   email = rglassett@gmail.com
+[mergetool "fugitive"]
+  cmd = vim -f -c \"Gdiff\" \"$MERGED\"
