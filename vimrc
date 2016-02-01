@@ -2,8 +2,9 @@
 " possible, as it has side effects.
 
 set nocompatible
+filetype plugin indent on
 
-" Use space as leader
+" Space is easier to hit than comma or backslash
 let mapleader = " "
 
 set backspace=2           " Backspace deletes like most programs in insert mode
@@ -17,8 +18,6 @@ set laststatus=2          " Always display the status line
 set nojoinspaces          " One space after periods when joining lines
 set noswapfile            " Disable swapfiles
 set number relativenumber " Hybrid line numbers
-set ruler                 " Show the cursor position all the time
-set showcmd               " Display incomplete commands
 set smartcase             " Overrides ignorecase if pattern contains caps
 set smartindent           " Next-line indentation
 set splitbelow splitright " Open splits to the right and bottom
@@ -37,7 +36,6 @@ set colorcolumn=+1
 set list listchars=tab:»·,trail:·,nbsp:·
 
 " Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
@@ -47,26 +45,25 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
-filetype plugin indent on
-
 " Color scheme
 set background=dark
 colorscheme solarized
 
-" Quicker tab manipulation
-nnoremap th :tabprev<CR>
-nnoremap tj :tablast<CR>
-nnoremap tk :tabfirst<CR>
-nnoremap tl :tabnext<CR>
-nnoremap tt :tabnew<CR>
-nnoremap tw :tabclose<CR>
+" " Quicker tab manipulation
+" nnoremap th :tabprev<CR>
+" nnoremap tj :tablast<CR>
+" nnoremap tk :tabfirst<CR>
+" nnoremap tl :tabnext<CR>
+" nnoremap tt :tabnew<CR>
+" nnoremap tw :tabclose<CR>
 
-" faster quickfix list navigation
-nnoremap [Q :cfirst<CR>
-nnoremap [q :cprev<CR>
-nnoremap ]q :cnext<CR>
-nnoremap [Q :clast<CR>
+" " faster quickfix list navigation
+" nnoremap [Q :cfirst<CR>
+" nnoremap [q :cprev<CR>
+" nnoremap ]q :cnext<CR>
+" nnoremap [Q :clast<CR>
 
+nnoremap <Leader><C-n> :NERDTreeFind<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 " Copy selection to clipboard
 vnoremap <C-c> "*du
@@ -74,17 +71,19 @@ vnoremap <C-c> "*du
 nnoremap <Leader>k :Ag <C-R><C-W><CR>
 vnoremap <Leader>k y<CR>:Ag <C-R>"<CR>
 " Smart paste from system clipboard
-noremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
+nnoremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
 " On-the-fly updates to vimrc
 nnoremap <Leader>v :tabedit $MYVIMRC<CR>
 " Indent entire file
-noremap <Leader>i mmgg=G`m<CR>
+nnoremap <Leader>= mmgg=G`m<CR>
 " Disable search highlighting
-noremap <Leader>h :nohlsearch<CR>
+nnoremap <Leader>h :nohlsearch<CR>
 
-set statusline=%.40f
+set statusline=%.40t
 set statusline+=\ 
 set statusline+=%y
+set statusline+=\ 
+set statusline+=%{fugitive#head()}
 set statusline+=\ 
 set statusline+=%m
 set statusline+=%=
@@ -94,7 +93,7 @@ set statusline+=%c
 set statusline+=\ 
 set statusline+=[%l/%L]
 set statusline+=\ 
-set statusline+=(%p%%)
+set statusline+=%p%%
 
 augroup window_resize
   autocmd!
