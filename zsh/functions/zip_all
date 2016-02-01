@@ -1,1 +1,0 @@
-zip_all () { for f in *; do zip -r $f.zip $f; done }
