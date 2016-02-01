@@ -70,6 +70,9 @@ nnoremap [Q :clast<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 " Copy selection to clipboard
 vnoremap <C-c> "*du
+" Grep for the current word
+nnoremap <Leader>k :Ag <C-R><C-W><CR>
+vnoremap <Leader>k y<CR>:Ag <C-R>"<CR>
 " Smart paste from system clipboard
 noremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
 " On-the-fly updates to vimrc
@@ -106,6 +109,7 @@ augroup END
 augroup filetypes
   autocmd!
   autocmd Filetype gitcommit,markdown setlocal spell textwidth=72
+  autocmd Filetype ruby setlocal regexpengine=1
 augroup END
 
 let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'ruby', 'rb=ruby', 'html']
