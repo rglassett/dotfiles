@@ -1,24 +1,10 @@
-# OS X
-.DS_Store
-
-# Windows
-Thumbs.db
-
-# Vim
 *.sw[nop]
-
-# Rails
+.DS_Store
+.bundle
+.byebug_history
+.env
 db/*.sqlite3
 log/*.log
+tags
 tmp/**/*
 !tmp/cache/.keep
-.sass-cache
-
-# Other
-*.local
-.bundle
-.env
-
-tags
-.agignore
-.byebug_history
