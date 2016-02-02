@@ -1,5 +1,3 @@
-set nocompatible
-
 call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
@@ -10,8 +8,9 @@ Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'rking/ag.vim'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
+Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
@@ -21,7 +20,6 @@ Plug 'vim-ruby/vim-ruby'
 
 " Color schemes
 Plug 'altercation/vim-colors-solarized'
-Plug 'tomasr/molokai'
 
 " Snipmate engine for Textmate-style snippets
 Plug 'MarcWeber/vim-addon-mw-utils'
