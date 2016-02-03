@@ -8,7 +8,6 @@ Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'rking/ag.vim'
-" Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-commentary'
@@ -18,7 +17,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 
-" Color schemes
+" Color scheme
 Plug 'altercation/vim-colors-solarized'
 
 " Snipmate engine for Textmate-style snippets
