@@ -2,75 +2,74 @@
 " possible, as it has side effects.
 set nocompatible
 
-" Load plugins first to avoid conflicts
+" Load plugins first in case settings require them
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
 filetype plugin indent on
 
-" Space is easier to hit than comma or backslash
-let mapleader = " "
+" Options
+set backspace=indent,eol,start      " Sane backspace behavior
+set colorcolumn=+1                  " Highlight the text gutter
+set cursorline                      " Highlight currently-selected line
+set diffopt+=vertical               " Use vertical splits in diff mode
+set expandtab                       " Convert tab characters to spaces
+set hlsearch                        " Highlight search results
+set ignorecase                      " Default to case-insensitive searching
+set incsearch                       " Highlight first match while searching
+set laststatus=2                    " Always display the status line
+set lazyredraw                      " Boost macro performance
+set list                            " Enable list mode
+set listchars=tab:»·,trail:·,nbsp:· " Show tabs and unwanted spaces
+set nojoinspaces                    " Join sentences with one space, not two
+set noswapfile                      " Disable swapfiles
+set number relativenumber           " Current line absolute, others relative
+set shiftround                      " Always indent to a multiple of shiftwidth
+set shiftwidth=2                    " Indent by 2 spaces (same as tabstop)
+set smartcase                       " Overrides ignorecase when using caps
+set smartindent                     " Next-line indentation
+set splitbelow splitright           " Open splits to the right and bottom
+set tabstop=2                       " Use 2 spaces for tabs
+set textwidth=80                    " Set text gutter to 80 columns
 
-set backspace=indent,eol,start " Sane backspace behavior
-set cursorline                 " Highlight currently-selected line
-set diffopt+=vertical          " Use vertical splits in Gdiff
-set hlsearch                   " Highlight search results
-set ignorecase                 " Case insensitive pattern matching
-set incsearch                  " Do incremental searching
-set lazyredraw                 " Boost performance a little bit
-set laststatus=2               " Always display the status line
-set nojoinspaces               " One space after periods when joining lines
-set noswapfile                 " Disable swapfiles
-set number relativenumber      " Hybrid line numbers
-set smartcase                  " Overrides ignorecase if pattern contains caps
-set smartindent                " Next-line indentation
-set splitbelow splitright      " Open splits to the right and bottom
+" Status line
+set statusline=%.40f                " Current file path (40 characters max)
+set statusline+=\ 
+set statusline+=%y                  " [Filetype]
+set statusline+=\ 
+set statusline+=%{fugitive#head()}  " Current git branch
+set statusline+=\ 
+set statusline+=%m                  " Modified flag [+/-]
+set statusline+=%=                  " Make following items right-aligned
+set statusline+=%h                  " Help buffer flag
+set statusline+=\ 
+set statusline+=%c                  " Column number
+set statusline+=\ 
+set statusline+=[%l/%L]             " [Current line/total lines]
+set statusline+=\ 
+set statusline+=%p%%                " Percentage through file
 
-" Soft tabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
-set shiftround
-set expandtab
+" Use syntax highlighting and color scheme when possible
+if (&t_Co > 2 || has("gui_running"))
+  if !exists("syntax_on")
+    syntax on
+  endif
 
-" Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
-
-" Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
-
-" Switch syntax highlighting on, when the terminal has colors
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
+  set background=dark
+  colorscheme solarized
 endif
 
-" Color scheme
-set background=dark
-colorscheme solarized
-
-" " Quicker tab manipulation
-" nnoremap th :tabprev<CR>
-" nnoremap tj :tablast<CR>
-" nnoremap tk :tabfirst<CR>
-" nnoremap tl :tabnext<CR>
-" nnoremap tt :tabnew<CR>
-" nnoremap tw :tabclose<CR>
-
-" " faster quickfix list navigation
-" nnoremap [Q :cfirst<CR>
-" nnoremap [q :cprev<CR>
-" nnoremap ]q :cnext<CR>
-" nnoremap [Q :clast<CR>
+" Space is easier to hit than comma or backslash
+let mapleader = " "
 
 " Make yank behave like other operators
 nnoremap Y y$
 
-" " File browser
-" nnoremap <Leader><C-n> :NERDTreeFind<CR>
-" nnoremap <C-n> :NERDTreeToggle<CR>
-let g:netrw_liststyle=3
-nnoremap <C-n> :Explore<CR>
+" File browser
+let g:netrw_liststyle=0
+let g:netrw_banner=0
+nnoremap <C-n> :edit .<CR>
 
 " System clipboard copy/paste
 vnoremap <C-c> "*y
@@ -97,22 +96,6 @@ nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
 nnoremap <Leader>a :call RunAllSpecs()<CR>
-
-set statusline=%.40f
-set statusline+=\ 
-set statusline+=%y
-set statusline+=\ 
-set statusline+=%{fugitive#head()}
-set statusline+=\ 
-set statusline+=%m
-set statusline+=%=
-set statusline+=%h
-set statusline+=\ 
-set statusline+=%c
-set statusline+=\ 
-set statusline+=[%l/%L]
-set statusline+=\ 
-set statusline+=%p%%
 
 augroup window_resize
   autocmd!
@@ -141,7 +124,7 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" Local config
+" Allow local overrides
 if filereadable(glob(".vimrc.local"))
   source .vimrc.local
 endif
