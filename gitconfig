@@ -19,8 +19,6 @@
   tool = vimdiff
 [difftool]
   prompt = false
-[include]
-  path = ~/.gitconfig.local
 [merge]
   ff = only
   tool = fugitive
@@ -37,3 +35,5 @@
   email = rglassett@gmail.com
 [mergetool "fugitive"]
   cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[include]
+  path = ~/.gitconfig.local
