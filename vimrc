@@ -1,13 +1,13 @@
 " Use Vim settings, rather than Vi settings. This setting must be as early as
 " possible, as it has side effects.
 set nocompatible
+filetype plugin indent on
+runtime macros/matchit.vim
 
 " Load plugins first in case settings require them
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
-
-filetype plugin indent on
 
 " Options
 set backspace=indent,eol,start      " Sane backspace behavior
