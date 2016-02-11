@@ -35,12 +35,11 @@ set textwidth=80                    " Set text gutter to 80 columns
 
 " Status line
 set statusline=%.40f                " Current file path (40 characters max)
-set statusline+=\ 
+set statusline+=\                   " Separator
 set statusline+=%y                  " [Filetype]
+set statusline+=%m                  " Modified flag [+/-]
 set statusline+=\ 
 set statusline+=%{fugitive#head()}  " Current git branch
-set statusline+=\ 
-set statusline+=%m                  " Modified flag [+/-]
 set statusline+=%=                  " Make following items right-aligned
 set statusline+=%h                  " Help buffer flag
 set statusline+=\ 
