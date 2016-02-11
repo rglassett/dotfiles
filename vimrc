@@ -125,6 +125,6 @@ if executable('ag')
 endif
 
 " Allow local overrides
-if filereadable(glob(".vimrc.local"))
+if filereadable(expand(".vimrc.local"))
   source .vimrc.local
 endif
