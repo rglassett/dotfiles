@@ -91,6 +91,7 @@ nnoremap <Leader>= mmgg=G`m<CR>
 nnoremap <Leader>h :nohlsearch<CR>
 
 " RSpec.vim
+let g:rspec_command = "VimuxRunCommand('rspec {spec}')"
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>

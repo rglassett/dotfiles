@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
+Plug 'benmills/vimux'
 Plug 'briancollins/vim-jst'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'kien/ctrlp.vim'
