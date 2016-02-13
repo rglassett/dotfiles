@@ -46,8 +46,6 @@ rbenv shell "$RUBY_VERSION"
 gem install bundler
 rbenv rehash
 
-brew install caskroom/cask/brew-cask
-
 brew cask install dropbox
 brew cask install flux
 brew cask install google-chrome
