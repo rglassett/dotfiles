@@ -35,15 +35,13 @@ set statusline=%.40f                " Current file path (40 characters max)
 set statusline+=\                   " Separator
 set statusline+=%y                  " [Filetype]
 set statusline+=%m                  " Modified flag [+/-]
-set statusline+=\ 
-set statusline+=%{fugitive#head()}  " Current git branch
 set statusline+=%=                  " Make following items right-aligned
 set statusline+=%h                  " Help buffer flag
-set statusline+=\ 
+set statusline+=\                   " Separator
 set statusline+=%c                  " Column number
-set statusline+=\ 
+set statusline+=\                   " Separator
 set statusline+=[%l/%L]             " [Current line/total lines]
-set statusline+=\ 
+set statusline+=\                   " Separator
 set statusline+=%p%%                " Percentage through file
 
 " Use syntax highlighting and color scheme when possible
