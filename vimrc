@@ -1,6 +1,3 @@
-" Use Vim settings, rather than Vi settings. This setting must be as early as
-" possible, as it has side effects.
-set nocompatible
 filetype plugin indent on
 runtime macros/matchit.vim
 
@@ -125,6 +122,6 @@ if executable('ag')
 endif
 
 " Allow local overrides
-if filereadable(expand(".vimrc.local"))
-  source .vimrc.local
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
 endif
