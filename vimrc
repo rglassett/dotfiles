@@ -66,7 +66,7 @@ let g:netrw_banner=0
 nnoremap <C-n> :edit .<CR>
 
 " System clipboard copy/paste
-vnoremap <C-c> "*y
+xnoremap <C-c> "*y
 nnoremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
 
 " Copy current path into the system clipboard
@@ -74,7 +74,7 @@ nnoremap <Leader>% :let @+ = expand("%")<CR>
 
 " Grep for the current word
 nnoremap <Leader>k :Ag <C-R><C-W><CR>
-vnoremap <Leader>k y<CR>:Ag <C-R>"<CR>
+xnoremap <Leader>k y<CR>:Ag <C-R>"<CR>
 
 " On-the-fly updates to vimrc
 nnoremap <Leader>v :tabedit $MYVIMRC<CR>
