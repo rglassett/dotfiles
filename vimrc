@@ -25,7 +25,6 @@ set number relativenumber           " Current line absolute, others relative
 set shiftround                      " Always indent to a multiple of shiftwidth
 set shiftwidth=2                    " Indent by 2 spaces (same as tabstop)
 set smartcase                       " Overrides ignorecase when using caps
-set smartindent                     " Next-line indentation
 set splitbelow splitright           " Open splits to the right and bottom
 set tabstop=2                       " Use 2 spaces for tabs
 set textwidth=80                    " Set text gutter to 80 columns
