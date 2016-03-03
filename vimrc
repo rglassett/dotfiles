@@ -61,8 +61,6 @@ nnoremap Y y$
 
 " File browser
 let g:netrw_liststyle=0
-let g:netrw_banner=0
-nnoremap <C-n> :edit .<CR>
 
 " System clipboard copy/paste
 xnoremap <C-c> "*y
@@ -91,23 +89,11 @@ nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
 nnoremap <Leader>a :call RunAllSpecs()<CR>
 
-augroup window_resize
-  autocmd!
-  autocmd VimResized * :wincmd =
-augroup END
-
-augroup update_vimrc
+augroup vimrc
   autocmd!
   autocmd BufWritePost .vimrc source $MYVIMRC
+  autocmd VimResized * :wincmd =
 augroup END
-
-augroup filetypes
-  autocmd!
-  autocmd Filetype gitcommit,markdown setlocal spell textwidth=72
-  autocmd Filetype ruby setlocal regexpengine=1
-augroup END
-
-let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'ruby', 'rb=ruby', 'html']
 
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
