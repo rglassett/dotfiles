@@ -53,6 +53,9 @@ if (&t_Co > 2 || has("gui_running"))
   colorscheme solarized
 endif
 
+" Ag user command
+command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+
 " Space is easier to hit than comma or backslash
 let mapleader = " "
 
@@ -96,11 +99,11 @@ augroup vimrc
 augroup END
 
 if executable('ag')
+  " Use ag as the default grep program
   set grepprg=ag\ --nogroup\ --nocolor
 
-  " Use Ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
+  " Use ag in CtrlP for listing files. Fast enough that we don't need caching.
+  let g:ctrlp_user_command = 'ag --files-with-matches --hidden --literal --nocolor -g "" %s'
   let g:ctrlp_use_caching = 0
 endif
 
