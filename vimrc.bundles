@@ -4,7 +4,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'benmills/vimux'
 Plug 'briancollins/vim-jst'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
