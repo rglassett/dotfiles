@@ -1,6 +1,11 @@
 # makes color constants available
 autoload -U colors && colors
 
+# edit current command in an editor
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 # enable colored output from ls, etc
 export CLICOLOR=1
 
