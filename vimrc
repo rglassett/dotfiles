@@ -62,9 +62,6 @@ let mapleader = " "
 " Make yank behave like other operators
 nnoremap Y y$
 
-" File browser
-let g:netrw_liststyle=0
-
 " System clipboard copy/paste
 xnoremap <C-c> "*y
 nnoremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
