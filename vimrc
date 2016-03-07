@@ -68,10 +68,6 @@ nnoremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
 " Copy current path into the system clipboard
 nnoremap <Leader>% :let @+ = expand("%")<CR>
 
-" Grep for the current word
-nnoremap <Leader>k :Ag <C-R><C-W><CR>
-xnoremap <Leader>k y<CR>:Ag <C-R>"<CR>
-
 " On-the-fly updates to vimrc
 nnoremap <Leader>v :tabedit $MYVIMRC<CR>
 
@@ -80,6 +76,9 @@ nnoremap <Leader>= mmgg=G`m<CR>
 
 " Disable search highlighting
 nnoremap <Leader>h :nohlsearch<CR>
+
+" Lookup.vim
+let g:lookup_command = 'Ag {keyword}'
 
 " RSpec.vim
 let g:rspec_command = "VimuxRunCommand('rspec {spec}')"
