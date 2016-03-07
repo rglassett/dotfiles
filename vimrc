@@ -69,10 +69,7 @@ nnoremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
 nnoremap <Leader>% :let @+ = expand("%")<CR>
 
 " On-the-fly updates to vimrc
-nnoremap <Leader>v :tabedit $MYVIMRC<CR>
-
-" Indent entire file
-nnoremap <Leader>= mmgg=G`m<CR>
+nnoremap <Leader>ev :tabedit $MYVIMRC<CR>
 
 " Disable search highlighting
 nnoremap <Leader>h :nohlsearch<CR>
