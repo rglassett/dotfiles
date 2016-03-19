@@ -23,7 +23,7 @@ set nojoinspaces                    " Join sentences with one space, not two
 set noswapfile                      " Disable swapfiles
 set number relativenumber           " Current line absolute, others relative
 set shiftround                      " Always indent to a multiple of shiftwidth
-set shiftwidth=2                    " Indent by 2 spaces (same as tabstop)
+set shiftwidth=0                    " Use the value of 'tabstop' for autoindent
 set smartcase                       " Overrides ignorecase when using caps
 set splitbelow splitright           " Open splits to the right and bottom
 set tabstop=2                       " Use 2 spaces for tabs
