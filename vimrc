@@ -30,7 +30,7 @@ set tabstop=2                       " Use 2 spaces for tabs
 set textwidth=80                    " Set text gutter to 80 columns
 
 " Status line
-set statusline=%.40f                " Current file path (40 characters max)
+set statusline=%f                   " Current file path (40 characters max)
 set statusline+=\                   " Separator
 set statusline+=%y                  " [Filetype]
 set statusline+=%m                  " Modified flag [+/-]
@@ -70,6 +70,7 @@ nnoremap <Leader>% :let @+ = expand("%")<CR>
 
 " On-the-fly updates to vimrc
 nnoremap <Leader>ev :tabedit $MYVIMRC<CR>
+nnoremap <Leader>es :tabedit $HOME/.vim/bundle/vim-snippets<CR>
 
 " Disable search highlighting
 nnoremap <Leader>h :nohlsearch<CR>
