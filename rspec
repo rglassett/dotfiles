@@ -1,3 +1,6 @@
 --color
 --format documentation
 --order random
+
+<% local = File.join(Dir.home, '.rspec-local') %>
+<%= IO.read(local) if File.exists?(local) %>
