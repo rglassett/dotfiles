@@ -7,5 +7,7 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=R
 
-set guicursor+=a:blinkon0                 " Disable cursor blink
+" Disable cursor blink
+set guicursor+=a:blinkon0
+
 set guifont=Monaco:h12,Menlo\ Regular:h12
