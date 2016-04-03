@@ -88,7 +88,7 @@ nnoremap <Leader>a :call RunAllSpecs()<CR>
 augroup vimrc
   autocmd!
   autocmd BufWritePost .vimrc source $MYVIMRC
-  autocmd VimResized * :wincmd =
+  autocmd VimResized * wincmd =
 augroup END
 
 if executable('ag')
