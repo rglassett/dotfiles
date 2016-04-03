@@ -1,9 +1,17 @@
 #!/bin/sh
 
+# Fetch dotfiles
+if [[ ! -d "$HOME/.dotfiles" ]]; then
+  git clone git@github.com:rglassett/.dotfiles.git $HOME/.dotfiles
+fi
+
 # Homebrew installation
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 export PATH="/usr/local/bin:$PATH"
-brew bundle --file=$HOME/dotfiles/Brewfile
+brew bundle --file=$HOME/.dotfiles/Brewfile
+
+# Symlink dotfiles
+env RCRC=$HOME/.dotfiles/rcrc rcup
 
 # Use zshell
 chsh -s $(which zsh)
@@ -23,12 +31,6 @@ gem install bundler
 rbenv rehash
 number_of_cores=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((number_of_cores - 1))
-
-# Symlink dotfiles
-if [[ ! -d "$HOME/dotfiles" ]]; then
-  git clone git@github.com:rglassett/dotfiles.git $HOME/dotfiles
-  env RCRC=$HOME/dotfiles/rcrc rcup
-fi
 
 # Add iTerm colorschemes
 open $HOME/.iTerm2/Solarized\ Dark\ Deutan.itermcolors
