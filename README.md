@@ -21,8 +21,8 @@ brew install rcm
 Then, to install:
 
 ```sh
-git clone git@github.com:rglassett/dotfiles.git $HOME/dotfiles
-env RCRC=$HOME/dotfiles/rcrc rcup
+git clone git@github.com:rglassett/dotfiles.git $HOME/.dotfiles
+env RCRC=$HOME/.dotfiles/rcrc rcup
 ```
 
 Much of this configuration is stolen from the [Thoughtbot dotfiles
