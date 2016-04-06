@@ -62,13 +62,13 @@ export -U PATH
 # load autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
+# aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
+
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
 done
-
-# aliases
-[[ -f ~/.aliases ]] && source ~/.aliases
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
