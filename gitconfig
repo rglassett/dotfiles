@@ -2,16 +2,12 @@
   a = add
   aa = add -A
   b = branch
-  cb = checkout -b
   cm = commit
   co = checkout
   d = difftool
   l = log --pretty=colored-oneline --date=short
-  m = merge
   mt = mergetool
   p = pull
-  pr = pull --rebase
-  r = rebase
 [core]
   excludesfile = ~/.gitignore
 [diff]
