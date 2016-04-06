@@ -17,7 +17,10 @@ git_prompt_info() {
   fi
 }
 setopt promptsubst
-PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
+PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}' # ssh username/hostname
+PS1+='%{$fg_bold[blue]%}%c'                         # trailing part of pwd
+PS1+='%{$reset_color%}$(git_prompt_info) '          # current git branch
+PS1+='%# '                                          # running with privileges?
 
 # completion
 autoload -Uz compinit
