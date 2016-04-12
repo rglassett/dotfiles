@@ -1,3 +1,5 @@
 vim/.netrwhist
 vim/.VimballRecord
 vim/bundle/*/
+vim/undodir/*
+!vim/undodir/.keep

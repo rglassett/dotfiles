@@ -28,6 +28,8 @@ set smartcase                       " Overrides ignorecase when using caps
 set splitbelow splitright           " Open splits to the right and bottom
 set tabstop=2                       " Use 2 spaces for tabs
 set textwidth=80                    " Set text gutter to 80 columns
+set undofile                        " Record undo history after leaving buffer
+set undodir=$HOME/.vim/undodir      " Store undofiles in $HOME/.vim/undodir
 
 " Status line
 set statusline=%f                   " Current file path (40 characters max)
