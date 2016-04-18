@@ -1,3 +1,4 @@
 #!/bin/sh
 
-mkdir -p .git/safe
+git_root = `git rev-parse --show-toplevel`
+mkdir -p "$(git_root)/.git/safe"
