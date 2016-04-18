@@ -1,0 +1,4 @@
+#!/bin/sh
+
+git add -A
+git commit --no-verify --allow-empty --message="WIP"
