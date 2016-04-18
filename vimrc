@@ -80,6 +80,9 @@ nnoremap <Leader>h :nohlsearch<CR>
 " Lookup.vim
 let g:lookup_command = 'Ag {keyword}'
 
+" Pick.vim
+nnoremap <C-p> :call PickFile()<CR>
+
 " RSpec.vim
 let g:rspec_command = "VimuxRunCommand('rspec {spec}')"
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
@@ -94,12 +97,7 @@ augroup vimrc
 augroup END
 
 if executable('ag')
-  " Use ag as the default grep program
   set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Fast enough that we don't need caching.
-  let g:ctrlp_user_command = 'ag --files-with-matches --hidden --literal --nocolor -g "" %s'
-  let g:ctrlp_use_caching = 0
 endif
 
 " Allow local overrides
