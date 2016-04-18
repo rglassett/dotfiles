@@ -1,0 +1,9 @@
+#!/bin/sh
+
+commit_message=`git log --max-count=1 --format=%B`
+
+if [[ "$commit_message" == "[skip ci] WIP" ]]; then
+  git reset HEAD^
+else
+  echo "No WIP commits to undo."
+fi

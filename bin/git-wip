@@ -1,0 +1,3 @@
+#!/bin/sh
+
+git commit --no-verify --allow-empty --message="[skip ci] WIP"
