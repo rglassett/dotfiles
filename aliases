@@ -1,6 +1,7 @@
 alias b="bundle"
 alias be="bundle exec"
 alias e="$EDITOR"
+alias git="hub"
 alias l="ls"
 alias la="ls -a"
 alias ll="ls -al"
