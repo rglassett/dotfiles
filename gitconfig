@@ -10,6 +10,8 @@
   p = pull
 [core]
   excludesfile = ~/.gitignore
+[commit]
+  template = ~/.gitmessage
 [diff]
   tool = vimdiff
 [difftool]
