@@ -1,1 +1,1 @@
-let b:lookup_command = 'man {keyword}'
+let b:lookup_command = '!man {keyword}'
