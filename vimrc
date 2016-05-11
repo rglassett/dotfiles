@@ -56,7 +56,7 @@ if (&t_Co > 2 || has("gui_running"))
 endif
 
 " Ag user command
-command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+command! -nargs=+ -complete=file -bar Ag silent! grep! <args> | redraw!
 
 " Space is easier to hit than comma or backslash
 let mapleader = " "
