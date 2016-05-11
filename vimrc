@@ -7,6 +7,7 @@ if filereadable(expand("~/.vimrc.bundles"))
 endif
 
 " Options
+set autoindent                      " Preserve indentation on new lines
 set backspace=indent,eol,start      " Sane backspace behavior
 set colorcolumn=+1                  " Highlight the text gutter
 set cursorline                      " Highlight currently-selected line
