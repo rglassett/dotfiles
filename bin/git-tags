@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+GIT_DIR="`git rev-parse --git-dir`"
+
+trap 'rm -f "$GIT_DIR/$$.tags"' EXIT
+git ls-files | \
+  ctags --tag-relative -L - -f "$GIT_DIR/$$.tags" --languages=-javascript,sql
+mv "$GIT_DIR/$$.tags" "$GIT_DIR/tags"
