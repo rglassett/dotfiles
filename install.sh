@@ -21,6 +21,7 @@ find_latest_ruby() {
   rbenv install --list | grep --invert-match - | tail -1 | sed -e 's/^ *//'
 }
 
+eval "$(rbenv init -)"
 ruby_version="$(find_latest_ruby)"
 rbenv install "$ruby_version"
 rbenv global "$ruby_version"
