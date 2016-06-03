@@ -2,7 +2,7 @@
 
 # Fetch dotfiles
 if [[ ! -d "$HOME/.dotfiles" ]]; then
-  git clone git@github.com:rglassett/.dotfiles.git $HOME/.dotfiles
+  git clone git@github.com:rglassett/dotfiles.git $HOME/.dotfiles
 fi
 
 # Homebrew installation
