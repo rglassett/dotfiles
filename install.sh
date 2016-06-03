@@ -5,6 +5,9 @@ if [[ ! -d "$HOME/.dotfiles" ]]; then
   git clone git@github.com:rglassett/dotfiles.git $HOME/.dotfiles
 fi
 
+# Use zshell
+chsh -s $(which zsh)
+
 # Homebrew installation
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 export PATH="/usr/local/bin:$PATH"
@@ -12,9 +15,6 @@ brew bundle --file=$HOME/.dotfiles/Brewfile
 
 # Symlink dotfiles
 env RCRC=$HOME/.dotfiles/rcrc rcup
-
-# Use zshell
-chsh -s $(which zsh)
 
 # Ruby installation
 find_latest_ruby() {
