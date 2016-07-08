@@ -62,6 +62,10 @@ export -U PATH
 # load autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
+# load nvm
+export NVM_DIR="$HOME/.nvm"
+source "$(brew --prefix nvm)/nvm.sh"
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
