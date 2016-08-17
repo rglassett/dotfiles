@@ -1,2 +1,7 @@
 set editing-mode vi
-set keymap vi
+
+set keymap vi-insert
+Control-a: beginning-of-line
+Control-e: end-of-line
+Control-k: kill-line
+Control-u: kill-whole-line
