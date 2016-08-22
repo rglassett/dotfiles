@@ -20,6 +20,7 @@ set laststatus=2                    " Always display the status line
 set lazyredraw                      " Boost macro performance
 set list                            " Enable list mode
 set listchars=tab:»·,trail:·,nbsp:· " Show tabs and unwanted spaces
+set mouse=a                         " Enable mouse in all modes
 set nojoinspaces                    " Join sentences with one space, not two
 set noswapfile                      " Disable swapfiles
 set number relativenumber           " Current line absolute, others relative
@@ -29,6 +30,7 @@ set smartcase                       " Overrides ignorecase when using caps
 set splitbelow splitright           " Open splits to the right and bottom
 set tabstop=2                       " Use 2 spaces for tabs
 set textwidth=80                    " Set text gutter to 80 columns
+set ttymouse=xterm2                 " Improve mouse compatibility with tmux
 set undofile                        " Record undo history after leaving buffer
 set undodir=$HOME/.vim/undodir      " Store undofiles in $HOME/.vim/undodir
 
@@ -55,31 +57,24 @@ if (&t_Co > 2 || has("gui_running"))
   colorscheme solarized
 endif
 
-" Ag user command
-command! -nargs=+ -complete=file -bar Ag silent! grep! <args> | redraw!
+augroup vimrc
+  autocmd!
+  autocmd BufWritePost .vimrc source $MYVIMRC
+  autocmd VimResized * wincmd =
+augroup END
 
-" Space is easier to hit than comma or backslash
 let mapleader = " "
 
-" Make yank behave like other operators
-nnoremap Y y$
-
-" System clipboard copy/paste
-xnoremap <C-c> "*y
-nnoremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
-
-" Copy current path into the system clipboard
 nnoremap <Leader>% :let @+ = expand("%")<CR>
-
-" On-the-fly updates to vimrc
-nnoremap <Leader>ev :tabedit $MYVIMRC<CR>
 nnoremap <Leader>es :tabedit $HOME/.vim/bundle/vim-snippets<CR>
-
-" Disable search highlighting
+nnoremap <Leader>ev :tabedit $MYVIMRC<CR>
 nnoremap <Leader>h :nohlsearch<CR>
+nnoremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
+nnoremap Y y$
+xnoremap <C-c> "+y
 
 " Lookup.vim
-let g:lookup_command = 'Ag {keyword}'
+let g:lookup_command = 'Ag --fixed-strings {keyword}'
 
 " Pick.vim
 nnoremap <C-p> :call PickFile()<CR>
@@ -90,16 +85,6 @@ nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
 nnoremap <Leader>a :call RunAllSpecs()<CR>
-
-augroup vimrc
-  autocmd!
-  autocmd BufWritePost .vimrc source $MYVIMRC
-  autocmd VimResized * wincmd =
-augroup END
-
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-endif
 
 " Allow local overrides
 if filereadable(expand("~/.vimrc.local"))
