@@ -45,8 +45,8 @@ bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey '^K' kill-line
 bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
 bindkey '^U' kill-whole-line
-
 
 prepend_to_path() {
   PATH="$1:$PATH"
