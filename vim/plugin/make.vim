@@ -6,12 +6,11 @@ let g:loaded_make = 1
 
 function! s:HandleCloseChannel(channel)
   let bufnr = ch_getbufnr(a:channel, "out")
-  let error_lines = getbufline(bufnr, 1, "$")
-  execute "bdelete " . bufnr
   cgetexpr error_lines
+  execute "bdelete " . bufnr
 endfunction
 
-function! s:Make(...) abort
+function! s:Make(...)
   let args = a:0 ? join(a:000, ' ') : expand('%')
   let make_command = &makeprg . ' ' . args
 
