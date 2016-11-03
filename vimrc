@@ -73,8 +73,8 @@ nnoremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
 nnoremap Y y$
 xnoremap <C-c> "+y
 
-" Lookup.vim
-let g:lookup_command = 'Ag --fixed-strings {keyword}'
+" Keyword.vim
+let g:keyword_command = 'Ag --fixed-strings {keyword}'
 
 " Pick.vim
 nnoremap <C-p> :call PickFile()<CR>
