@@ -1,3 +1,6 @@
+ssh/*
+!ssh/config
+
 vim/.netrwhist
 vim/.VimballRecord
 vim/bundle/*/
