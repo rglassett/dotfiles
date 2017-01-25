@@ -1,14 +1,16 @@
 [alias]
   a = add
-  aa = add -A
+  aa = add --all
   b = branch
   cm = commit
   co = checkout
+  cp = cherry-pick
   d = diff
   dt = difftool
   l = log --pretty=colored-oneline --date=short
   mt = mergetool
   p = pull
+  up = !git checkout master && git pull && git checkout -
 [core]
   excludesfile = ~/.gitignore
 [commit]
@@ -23,16 +25,18 @@
   tool = fugitive
 [mergetool]
   keepBackup = false
+[mergetool "fugitive"]
+  cmd = vim -f -c \"Gdiff\" \"$MERGED\"
 [pretty]
   colored-oneline = format:%Cred%h%Creset %cd %Cblue%an%Creset %s
 [pull]
   ff = only
 [push]
   default = simple
+[rebase]
+  autostash = true
 [user]
   name = Ryan Glassett
   email = rglassett@gmail.com
-[mergetool "fugitive"]
-  cmd = vim -f -c \"Gdiff\" \"$MERGED\"
 [include]
   path = ~/.gitconfig.local
