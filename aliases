@@ -8,4 +8,4 @@ alias ll="ls -al"
 alias r="rspec"
 alias v="$VISUAL"
 
-[[ -f ~/.aliases.local ]] && source ~/.aliases.local
+[[ -f $HOME/.aliases.local ]] && source $HOME/.aliases.local

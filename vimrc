@@ -2,8 +2,8 @@ filetype plugin indent on
 runtime macros/matchit.vim
 
 " Load plugins first in case settings require them
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+if filereadable(expand("$HOME/.vimrc.bundles"))
+  source $HOME/.vimrc.bundles
 endif
 
 " Options
@@ -87,6 +87,6 @@ nnoremap <Leader>l :call RunLastSpec()<CR>
 nnoremap <Leader>a :call RunAllSpecs()<CR>
 
 " Allow local overrides
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
+if filereadable(expand("$HOME/.vimrc.local"))
+  source $HOME/.vimrc.local
 endif

@@ -30,7 +30,7 @@ compinit
 autoload -U zmv
 
 # history settings
-HISTFILE=~/.histfile
+HISTFILE=$HOME/.histfile
 HISTSIZE=1024
 SAVEHIST=1024
 
@@ -67,12 +67,12 @@ export NVM_DIR="$HOME/.nvm"
 source "$(brew --prefix nvm)/nvm.sh"
 
 # aliases
-[[ -f ~/.aliases ]] && source ~/.aliases
+[[ -f $HOME/.aliases ]] && source $HOME/.aliases
 
 # load custom executable functions
-for function in ~/.zsh/functions/*; do
+for function in $HOME/.zsh/functions/*; do
   source $function
 done
 
 # Local config
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+[[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local

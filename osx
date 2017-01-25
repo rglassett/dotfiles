@@ -30,7 +30,7 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Show the ~/Library folder
-chflags nohidden ~/Library
+chflags nohidden $HOME/Library
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true

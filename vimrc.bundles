@@ -32,8 +32,8 @@ Plug 'garbas/vim-snipmate'
 " My snippets, forked from honza/vim-snippets
 Plug 'rglassett/vim-snippets'
 
-if filereadable(expand("~/.vimrc.bundles.local"))
-  source ~/.vimrc.bundles.local
+if filereadable(expand("$HOME/.vimrc.bundles.local"))
+  source $HOME/.vimrc.bundles.local
 endif
 
 call plug#end()
