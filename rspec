@@ -1,5 +1,5 @@
 --color
---format documentation
+--format progress
 --order random
 
 <% local = File.join(Dir.home, '.rspec-local') %>
