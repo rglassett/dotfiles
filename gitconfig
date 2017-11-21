@@ -15,6 +15,7 @@
   excludesfile = ~/.gitignore
 [commit]
   template = ~/.gitmessage
+  verbose = true
 [diff]
   tool = vimdiff
   compaction-heuristic = true

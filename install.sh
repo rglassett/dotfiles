@@ -1,12 +1,12 @@
 #!/bin/sh
 
+set -o pipefail
+set -o errexit
+
 # Fetch dotfiles
 if [[ ! -d "$HOME/.dotfiles" ]]; then
-  git clone git@github.com:rglassett/dotfiles.git $HOME/.dotfiles
+  git clone https://github.com/rglassett/dotfiles.git $HOME/.dotfiles
 fi
-
-# Use zshell
-chsh -s $(which zsh)
 
 # Homebrew installation
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -25,7 +25,6 @@ eval "$(rbenv init -)"
 ruby_version="$(find_latest_ruby)"
 rbenv install "$ruby_version"
 rbenv global "$ruby_version"
-rbenv shell "$ruby_version"
 
 # Bundler config
 gem install bundler
@@ -53,5 +52,6 @@ open $HOME/.iTerm2/Solarized\ Light\ Deutan.itermcolors
 # Install vim plugins
 vim "+:PlugInstall" "+:qa"
 
-# OS X configuration
-source $HOME/.osx
+# Use zshell
+echo '/usr/local/bin/zsh' | sudo tee -a /usr/shells
+chsh -s /usr/local/bin/zsh
