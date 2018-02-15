@@ -70,8 +70,9 @@ nnoremap <Leader>es :tabedit $HOME/.vim/bundle/vim-snippets<CR>
 nnoremap <Leader>ev :tabedit $MYVIMRC<CR>
 nnoremap <Leader>h :nohlsearch<CR>
 nnoremap <Leader>p :set paste<CR>"*]p:set nopaste<CR>
+nnoremap <Leader>y "+y
+xnoremap <Leader>y "+y
 nnoremap Y y$
-xnoremap <C-c> "+y
 
 " Keyword.vim
 let g:keyword_command = 'Ag --fixed-strings {keyword}'
