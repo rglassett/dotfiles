@@ -1,0 +1,6 @@
+git_prompt_info() {
+  ref=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+  if [[ -n $ref ]]; then
+    echo "%{$fg_bold[magenta]%}$ref%{$reset_color%} "
+  fi
+}
