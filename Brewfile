@@ -3,7 +3,6 @@ tap 'homebrew/bundle'
 tap 'thoughtbot/formulae'
 
 # Unix
-brew 'autojump'
 brew 'ctags'
 brew 'git'
 brew 'heroku-toolbelt'
@@ -21,6 +20,7 @@ brew 'the_silver_searcher'
 brew 'thoughtbot/formulae/rcm'
 brew 'tmux'
 brew 'vim'
+brew 'z'
 brew 'zsh'
 
 # Databases

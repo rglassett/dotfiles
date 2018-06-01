@@ -15,8 +15,9 @@ for function in $HOME/.zsh/functions/*; do
   source $function
 done
 
-if [[ -f /usr/local/etc/profile.d/autojump.sh ]]; then
-  source /usr/local/etc/profile.d/autojump.sh
+if [[ -f /usr/local/etc/profile.d/z.sh ]]; then
+  source /usr/local/etc/profile.d/z.sh
+  alias j=z
 fi
 
 if [[ -d /usr/local/opt/nvm ]]; then
