@@ -33,24 +33,12 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-PATH="$HOME/.bin:$PATH"
-PATH=".git/safe/../../node_modules/.bin:$PATH"
-PATH=".git/safe/../../bin:$PATH"
-
 PS1='%{$fg_bold[blue]%}%c%{$reset_color%} ' # trailing part of pwd
 PS1+='$(git_prompt_info)'                   # current git branch
 PS1+='%# '                                  # running with privileges?
 
-export CLICOLOR=1
-export EDITOR="vim"
-export VISUAL=$EDITOR
-
 alias be="bundle exec"
-alias e="$EDITOR"
-alias git="hub"
 alias l="ls"
-alias la="ls -a"
 alias ll="ls -al"
-alias v="$VISUAL"
 
 [[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
