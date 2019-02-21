@@ -1,0 +1,4 @@
+#!/bin/sh
+
+[[ -f $HOME/.Xmodmap ]] && xmodmap $HOME/.Xmodmap
+xcape
