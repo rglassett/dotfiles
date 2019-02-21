@@ -2,8 +2,8 @@ filetype plugin indent on
 runtime macros/matchit.vim
 
 " Load plugins first in case settings require them
-if filereadable(expand("$HOME/.vimrc.bundles"))
-  source $HOME/.vimrc.bundles
+if filereadable(expand("$HOME/.vim/vimrc.bundles"))
+  source $HOME/.vim/vimrc.bundles
 endif
 
 " Options

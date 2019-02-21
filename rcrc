@@ -1,3 +1,0 @@
-EXCLUDES="Brewfile README.md install.sh"
-DOTFILES_DIRS="$HOME/.dotfiles $HOME/.dotfiles-local"
-SYMLINK_DIRS="bin hammerspoon ssh vim"

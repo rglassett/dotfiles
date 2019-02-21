@@ -1,8 +1,8 @@
-ssh/*
-!ssh/config
+unix/.ssh/*
+!unix/.ssh/config
 
-vim/.netrwhist
-vim/.VimballRecord
-vim/bundle/*/
-vim/undodir/*
-!vim/undodir/.keep
+unix/.vim/.netrwhist
+unix/.vim/.VimballRecord
+unix/.vim/bundle/*/
+unix/.vim/undodir/*
+!unix/.vim/undodir/.keep
